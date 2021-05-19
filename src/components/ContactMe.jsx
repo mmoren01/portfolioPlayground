@@ -4,9 +4,31 @@ import Container from 'react-bootstrap/Container';
 const ContactMe = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [company, setCompany] = useState('');
+  const [affiliation, setAffiliation] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const handleOnChange = (event) => {
+    const value = event.target.value;
+    switch(event.target.name) {
+      case "firstName":
+        setFirstName(value);
+        break;
+      case "lastName":
+        setLastName(value);
+        break;
+      case "affiliation":
+        setAffiliation(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "message":
+        setMessage(value);
+    }
+  };
+
+  const handleSubmit = () => {}
 
   return (
     <Container>
@@ -46,6 +68,50 @@ const ContactMe = () => {
       <h2>
         Shoot Me A Message
       </h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          First Name:
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Last Name:
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Company/Organization:
+          <input
+            type="text"
+            name="affiliation"
+            value={affiliation}
+            onChange={handleOnChange}
+          />
+        </label>
+        <label>
+          Email:
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleOnChange}
+          />
+        </label>
+        <textarea
+          name="message"
+          value={message}
+          onChange={handleOnChange}
+        />
+        <input type="submit" value="Submit" />
+      </form>
     </Container>
   )
 }
