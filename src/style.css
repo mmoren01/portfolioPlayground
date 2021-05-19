@@ -1,0 +1,8 @@
+.app {
+
+}
+
+.dropdown-toggle::after {
+  content: none
+  !important
+}
