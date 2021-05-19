@@ -69,45 +69,43 @@ const ContactMe = () => {
         Shoot Me A Message
       </h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          First Name:
-          <input
-            type="text"
-            name="firstName"
-            value={firstName}
-            onChange={handleOnChange}
-          />
-        </label>
-        <label>
-          Last Name:
-          <input
-            type="text"
-            name="lastName"
-            value={lastName}
-            onChange={handleOnChange}
-          />
-        </label>
-        <label>
-          Company/Organization:
-          <input
-            type="text"
-            name="affiliation"
-            value={affiliation}
-            onChange={handleOnChange}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={handleOnChange}
-          />
-        </label>
+        <input
+          type="text"
+          name="firstName"
+          aria-label="First Name"
+          placeholder="First Name"
+          value={firstName}
+          onChange={handleOnChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          aria-label="Last Name"
+          placeholder="Last Name"
+          value={lastName}
+          onChange={handleOnChange}
+        />
+        <input
+          type="text"
+          name="affiliation"
+          aria-label="Organization"
+          placeholder="Organization (Optional)"
+          value={affiliation}
+          onChange={handleOnChange}
+        />
+        <input
+          type="text"
+          name="email"
+          aria-label="E-mail"
+          placeholder="E-mail"
+          value={email}
+          onChange={handleOnChange}
+        />
         <textarea
           name="message"
+          aria-label="Message"
           value={message}
+          placeholder="Message"
           onChange={handleOnChange}
         />
         <input type="submit" value="Submit" />
